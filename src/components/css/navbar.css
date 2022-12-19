@@ -1,0 +1,12 @@
+.navbar-master-container{
+    background-color:#DDE3C3;
+}
+
+#navbar-search-button{
+    position: relative;
+    left:-40px;
+}
+
+.button-hover{
+    background-color: #1f1f1f;
+}
