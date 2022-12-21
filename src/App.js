@@ -12,6 +12,7 @@ const App = () =>{
   const addSubject = (subject) =>{
     setSubjects([...subjects,subject]);
   }
+  setGenerateOnLoad(false);
 
   return(
     <div className="">
