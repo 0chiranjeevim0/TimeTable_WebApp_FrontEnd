@@ -6,9 +6,9 @@ const Navbar = () =>{
 
 
     return(
-        <div className='w-screen navbar-master-container p-4 flex justify-between items-center'>
+        <div className='w-screen navbar-master-container py-4 px-4 lg:px-12 flex justify-between items-center'>
             <div className='w-1/4'>
-                <h1 id="navbar-logo" className='font-bold text-xl'>TIME<span>table</span></h1>
+                <h1 id="navbar-logo" className='font-bold text-xl'>TIME<span>TABLE</span></h1>
             </div>
             <div className='lg:hidden'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8">
@@ -17,10 +17,9 @@ const Navbar = () =>{
             </div>
             <div className='hidden lg:block w-fit'>
                 <ul className='inline-flex'>
-                    <li className='mr-8 hover:text-gray-900 hover:underline'><a href="#">Documentation</a></li>
-                    <li className='mr-8 hover:text-gray-900 hover:underline'><a href="#">Explore</a></li>
-                    <li className='mr-8 hover:text-gray-900 hover:underline'><a href="#">Support</a></li>
-                    <li className='mr-8 hover:text-gray-900 hover:underline'><a href="#">About US</a></li>
+                    <li className='mr-8 hover:text-gray-900 hover:underline'><a href="https://www.lipsum.com/">Documentation</a></li>
+                    <li className='mr-8 hover:text-gray-900 hover:underline'><a href="https://www.lipsum.com/">Explore</a></li>
+                    <li className='mr-8 hover:text-gray-900 hover:underline'><a href="https://www.lipsum.com/">Support</a></li>
                 </ul>
                 <input  className='py-2 px-6 rounded-full focus:outline-none'  type='text' placeholder="Search For TimeTable" />
                 <button id="navbar-search-button" className='bg-black py-2 px-6 text-white rounded-r-full hover:bg-gray-900'>
