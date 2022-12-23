@@ -3,16 +3,37 @@ import Navbar from './components/Navbar.js';
 import Banner from './components/Banner.js';
 import Subject from './components/Subject.js';
 import Tabledata from './components/Tabledata.js';
-
+import TimeTableContainer from './components/TimeTableContainer.js';
 
 const App = () =>{
   const [subjects, setSubjects] = useState([]);
   const [generateOnLoad, setGenerateOnLoad] = useState(false);
+  const [timetable, setTimetable] = useState();
 
   const addSubject = (subject) =>{
     setSubjects([...subjects,subject]);
   }
-  setGenerateOnLoad(false);
+
+  const getData = async()=>{
+    setGenerateOnLoad(true)
+    
+    try{
+     const data =  await fetch("http://65.2.35.205:3000/subjects",{
+       method:'POST',
+       body:JSON.stringify({
+         subject_1:{
+           name:"mark"
+         }
+       })
+     });
+     const res = await data.json();
+     setTimetable(res);
+     setGenerateOnLoad(false);
+    }catch(err){
+      console.log(err);
+    }
+    setGenerateOnLoad(false)
+  } 
 
   return(
     <div className="">
@@ -26,7 +47,7 @@ const App = () =>{
           <div className=''>
             <Tabledata subjects={subjects}/>
             <div className='flex justify-center mt-4'>
-                <button className='bg-black text-white px-4 py-2 rounded-lg w-3/4 flex justify-center lg:w-1/4 '>
+                <button onClick={getData} className='bg-black text-white px-4 py-2 rounded-lg w-3/4 flex justify-center lg:w-1/4 '>
                   {
                     (generateOnLoad?
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6 animate-spin">
@@ -40,6 +61,15 @@ const App = () =>{
                 </button>              
             </div>
           </div>
+        </div>
+        <div className='w-full'>
+          {
+            (timetable?
+              <TimeTableContainer data={timetable} />
+              :
+              <></>  
+            )
+          }
         </div>
         <div className='bg-black p-20 mt-10'>
 
