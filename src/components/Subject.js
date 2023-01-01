@@ -24,8 +24,8 @@ const Subject = (props) =>{
         setYear('');
         setSubject('');
         setDuration('');
-        setStaff('');
         setSubjectCode('')
+
     }
 
     return(
@@ -44,12 +44,13 @@ const Subject = (props) =>{
                     }
                 </select>
                 <select onChange={(e) => setIslab(e.target.value)} className="border-black border-2 px-4 p-2 rounded-lg mt-2 ml-2  lg:w-3/5">
+                    <option >Select Your Option</option>
                     <option value={false}>False</option>
                     <option value={true} >True</option>
                 </select>
             </div>
             
-            <button disabled={!year || !staff || !subject || !duration} onClick={sendSubject} className='bg-black p-2 text-white rounded-lg mt-4 w-1/4 flex justify-center lg:mt-5'>
+            <button onClick={sendSubject} className='bg-black p-2 text-white rounded-lg mt-4 w-1/4 flex justify-center lg:mt-5'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
