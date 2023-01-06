@@ -18,7 +18,7 @@ const StaffTable = (props) =>{
                         {
                             props.staffData.map((data) =>(
                                 <tr class="text-center">
-                                    <td className='border border-black p-2 capitalize'>{data.id}</td>
+                                    <td className='border border-black p-2 uppercase'>{data.id}</td>
                                     <td className='border border-black uppercase'>{data.name}</td>    
                                 </tr>
                             ))

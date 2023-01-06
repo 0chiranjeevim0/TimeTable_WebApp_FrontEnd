@@ -7,10 +7,13 @@ const Subjects = (props) => {
     const [subjects, setSubjects] = useState([]);
     const [generateOnLoad, setGenerateOnLoad] = useState(false);
     const [timetable, setTimetable] = useState();
+    
   
     const addSubject = (subject) =>{
       setSubjects([...subjects,subject]);
+     
     }
+    console.log(subjects);
   
     const getData = async()=>{
       setGenerateOnLoad(true)
@@ -21,7 +24,7 @@ const Subjects = (props) => {
          body:JSON.stringify({
            subject_1:{
              name:"mark"
-           }
+           } 
          })
        });
        const res = await data.json();
@@ -42,7 +45,7 @@ const Subjects = (props) => {
             </div>
             <div className=''>
                 <Tabledata subjects={subjects}/>
-                <div className='flex justify-center mt-4'>
+                <div className='flex justify-center mt-4 lg:ml-2'>
                     <button onClick={getData} className='bg-black text-white px-4 py-2 rounded-lg w-3/4 flex justify-center lg:w-1/4 '>
                     {
                         (generateOnLoad?

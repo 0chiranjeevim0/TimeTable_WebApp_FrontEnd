@@ -35,7 +35,7 @@ const Staff = ({addStaffDetails}) =>{
                 <StaffTable staffData={staffData}/>
             </div>
             <div className='w-3/4'>
-                <button onClick={setStaffDetails} className='bg-black p-2 text-white rounded-lg mt-4 w-3/4 flex justify-center mx-auto lg:mt-6'>Set Staff</button>
+                <button onClick={setStaffDetails} className='bg-black p-2 text-white rounded-lg mt-4 w-1/4 flex justify-center mx-auto lg:mt-6'>Set Staff</button>
             </div>
             
         </div>
